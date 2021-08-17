@@ -1,0 +1,15 @@
+{
+  "name": "xiaomiStep",
+  "version": "1.0.0",
+  "description": "xiaomiyun step function",
+  "main": "tyj001.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node tyj001.js"
+  },
+  "author": "gallonhe",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
