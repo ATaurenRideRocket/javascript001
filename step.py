@@ -156,7 +156,12 @@ if __name__ ==  "__main__":
     passwd = ""
     #要修改的步数，直接输入想要修改的步数值，留空为随机步数40000至49999之间
     step = ""
-    getUser(user, step)
+    try:
+        user = str(os.environ["miUser"])
+        passwd = str(os.environ["miPassword"])
+        print("user:"+user+"; passwd:"+passwd)
+    except Exception:
+        print("请设置环境变量miUser和miPassword!")
     user_list = user.split('#')
     passwd_list = passwd.split('#')
     setp_array = step.split('-')
