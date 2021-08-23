@@ -77,6 +77,7 @@ def login(user,password):
     #print(userid)
   
     return login_token,userid
+    
   
 #主函数
 def main(user, passwd, step):
@@ -138,15 +139,20 @@ def get_app_token(login_token):
     #print("app_token获取成功！")
     #print(app_token)
     return app_token
+   
+# 获取账号信息
+def getUser(user, passwd):
+    user = os.environ["miUser"]
+    passwd = os.environ["password"]
  
 if __name__ ==  "__main__":
     # 用户名（单用户的格式为 13800138000 ，多用户用#隔开，例如13800138000#13800138000#13800138000）
-    user = process.env.miUser
+    user = ""
     # 登录密码（用#隔开，例如123456#123456#123456）
-    passwd = process.env.password
+    passwd = ""
     #要修改的步数，直接输入想要修改的步数值，留空为随机步数40000至49999之间
     step = ""
- 
+    getUser(user, step)
     user_list = user.split('#')
     passwd_list = passwd.split('#')
     setp_array = step.split('-')
