@@ -140,14 +140,6 @@ def get_app_token(login_token):
     #print(app_token)
     return app_token
    
-# 获取账号信息
-def getUser(user, passwd):
-    try:
-        user = str(os.environ["miUser"])
-        passwd = str(os.environ["miPassword"])
-        print("user:"+user+"; passwd:"+passwd)
-    except Exception:
-        print("请设置环境变量miUser和miPassword!")
  
 if __name__ ==  "__main__":
     # 用户名（单用户的格式为 13800138000 ，多用户用#隔开，例如13800138000#13800138000#13800138000）
@@ -159,7 +151,6 @@ if __name__ ==  "__main__":
     try:
         user = str(os.environ["miUser"])
         passwd = str(os.environ["miPassword"])
-        print("user:"+user+"; passwd:"+passwd)
     except Exception:
         print("请设置环境变量miUser和miPassword!")
     user_list = user.split('#')
