@@ -142,8 +142,11 @@ def get_app_token(login_token):
    
 # 获取账号信息
 def getUser(user, passwd):
-    user = os.environ["miUser"]
-    passwd = os.environ["password"]
+    try:
+        user = os.environ["miUser"]
+        passwd = os.environ["miPassword"]
+     except Exception:
+        print("请设置环境变量miUser和miPassword")
  
 if __name__ ==  "__main__":
     # 用户名（单用户的格式为 13800138000 ，多用户用#隔开，例如13800138000#13800138000#13800138000）
