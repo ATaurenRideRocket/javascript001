@@ -145,7 +145,7 @@ def getUser(user, passwd):
     try:
         user = os.environ["miUser"]
         passwd = os.environ["miPassword"]
-     except Exception:
+    except Exception:
         print("请设置环境变量miUser和miPassword")
  
 if __name__ ==  "__main__":
