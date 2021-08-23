@@ -143,8 +143,8 @@ def get_app_token(login_token):
 # 获取账号信息
 def getUser(user, passwd):
     try:
-        user = os.environ["miUser"]
-        passwd = os.environ["miPassword"]
+        user = str(os.environ["miUser"])
+        passwd = str(os.environ["miPassword"])
         print("user:"+user+"; passwd:"+passwd)
     except Exception:
         print("请设置环境变量miUser和miPassword!")
