@@ -90,7 +90,7 @@ def main(user, passwd, step):
      
     if step == '':
         print ("已设置为随机步数（40000-49999）")
-        step = str(random.randint(90000,99999))
+        step = get_random_step()
         #step = str(random.randint(40000-49999))
     login_token = 0
     login_token,userid = login(user,password)
@@ -173,7 +173,6 @@ if __name__ ==  "__main__":
     try:
         user = str(os.environ["miUser"])
         passwd = str(os.environ["miPassword"])
-        step = get_random_step()
     except Exception:
         print("请设置环境变量miUser和miPassword!")
     user_list = user.split('#')
