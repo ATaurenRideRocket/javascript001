@@ -140,7 +140,28 @@ def get_app_token(login_token):
     #print("app_token获取成功！")
     #print(app_token)
     return app_token
-   
+
+#获取随机步数
+def get_random_step():
+    if str(os.environ["miStep"]) == '1':
+        return str(random.randint(10000,19999))
+    if str(os.environ["miStep"]) == '2':
+        return str(random.randint(20000,29999))
+    if str(os.environ["miStep"]) == '3':
+        return str(random.randint(30000,39999))
+    if str(os.environ["miStep"]) == '4':
+        return str(random.randint(40000,49999))
+    if str(os.environ["miStep"]) == '5':
+        return str(random.randint(50000,59999))
+    if str(os.environ["miStep"]) == '6':
+        return str(random.randint(60000,69999))
+    if str(os.environ["miStep"]) == '7':
+        return str(random.randint(70000,79999))
+    if str(os.environ["miStep"]) == '8':
+        return str(random.randint(80000,89999))
+    if str(os.environ["miStep"]) == '9':
+        return str(random.randint(90000,99999))
+      
  
 if __name__ ==  "__main__":
     # 用户名（单用户的格式为 13800138000 ，多用户用#隔开，例如13800138000#13800138000#13800138000）
@@ -152,6 +173,7 @@ if __name__ ==  "__main__":
     try:
         user = str(os.environ["miUser"])
         passwd = str(os.environ["miPassword"])
+        step = get_random_step()
     except Exception:
         print("请设置环境变量miUser和miPassword!")
     user_list = user.split('#')
